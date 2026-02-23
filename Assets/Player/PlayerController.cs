@@ -27,10 +27,9 @@ namespace Player
                 return;
             }
 
-            var move = new Vector3(_moveInput.x , 0, _moveInput.y);
+            var move = _moveInput.x * orientation.right + _moveInput.y * orientation.forward;
 
-
-            controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * (speed * Time.deltaTime));
         }
 
         public void OnMove(InputAction.CallbackContext context)
