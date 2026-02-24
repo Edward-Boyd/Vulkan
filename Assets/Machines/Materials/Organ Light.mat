@@ -133,7 +133,7 @@ Material:
     - _METALNESS: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Origin: -0.12
+    - _Origin: -0.22
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 1
