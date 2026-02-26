@@ -303,6 +303,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 03b46fce-6a96-4091-adf3-40c22bd5ca1d
     m_ActionName: 'PlayerControls/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 738b50b3-df59-4dc3-99c8-0db7f8d733bd
+    m_ActionName: 'PlayerControls/Interact[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -321,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerCameraController
   sensitivity: 0.75
-  verticalLookLimit: 90
+  verticalLookLimit: 75
   orientation: {fileID: 1592532269}
 --- !u!1 &410087039
 GameObject:
