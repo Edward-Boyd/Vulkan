@@ -734,6 +734,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.013430996, y: 0.013430999, z: 0.012500002}
   m_Center: {x: 0, y: 0, z: 0.006250001}
+--- !u!114 &685156514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685156509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a7d8e80c04826a7c8c2bca73c4d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Organs.Organ
+  fuel: 100
+  health: 100
+  productionAmount: 50
+  craftingTime: 10
+  isCraftingComplete: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467766549449033382, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.285
       objectReference: {fileID: 0}
     - target: {fileID: 4467766549449033382, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1300,28 +1317,6 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2005381556 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3606970762103652289, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
-  m_PrefabInstance: {fileID: 6509539030980407603}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2005381558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005381556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5a7d8e80c04826a7c8c2bca73c4d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Organs.Organ
-  fuel: 100
-  health: 100
-  productionAmount: 50
-  craftingTime: 10
-  isCraftingComplete: 0
 --- !u!1001 &6509539030980407603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1382,12 +1377,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3606970762103652289, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2005381558}
     - targetCorrespondingSourceObject: {fileID: 8841039395789881501, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
       insertIndex: -1
       addedObject: {fileID: 685156513}
+    - targetCorrespondingSourceObject: {fileID: 8841039395789881501, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 685156514}
   m_SourcePrefab: {fileID: 100100000, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
