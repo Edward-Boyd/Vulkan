@@ -1,9 +1,10 @@
-using UnityEngine.InputSystem;
+using Player;
+using UnityEngine;
 
 namespace Utilities
 {
     public interface IInteractable
     {
-        public void OnInteract(InputAction.CallbackContext context);
+        public void Interact(GameObject interactionOrigin);
     }
 }

@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b4fac170c5451a9b18e89d29877604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerCameraController
-  sensitivity: 1
+  sensitivity: 0.75
   verticalLookLimit: 90
   orientation: {fileID: 1592532269}
 --- !u!1 &410087039
@@ -708,6 +708,32 @@ Transform:
   - {fileID: 650736261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &685156509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8841039395789881501, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+  m_PrefabInstance: {fileID: 6509539030980407603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &685156513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685156509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013430996, y: 0.013430999, z: 0.012500002}
+  m_Center: {x: 0, y: 0, z: 0.006250001}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +858,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 03b46fce-6a96-4091-adf3-40c22bd5ca1d
     m_ActionName: 'PlayerControls/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971411304}
+        m_TargetAssemblyTypeName: Player.PlayerInteractController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 738b50b3-df59-4dc3-99c8-0db7f8d733bd
+    m_ActionName: 'PlayerControls/Interact[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -854,6 +896,33 @@ MonoBehaviour:
   speed: 10
   jumpHeight: 2
   gravity: -9.8
+--- !u!114 &971411303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971411295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e246667aa954a5db849d96f19931ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+  inventory: {fileID: 11400000, guid: 1dd25ae093497974390d10dab92972d3, type: 2}
+--- !u!114 &971411304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971411295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750c26e3b41d435ab0b375fb4070d8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInteractController
+  interactionDistance: 10
+  playerCamera: {fileID: 330585545}
 --- !u!1001 &1138728900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -941,6 +1010,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 971411300}
+    - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971411303}
+    - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971411304}
     - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 971411299}
@@ -1225,6 +1300,28 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005381556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3606970762103652289, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+  m_PrefabInstance: {fileID: 6509539030980407603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005381558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005381556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a7d8e80c04826a7c8c2bca73c4d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Organs.Organ
+  fuel: 100
+  health: 100
+  productionAmount: 50
+  craftingTime: 10
+  isCraftingComplete: 0
 --- !u!1001 &6509539030980407603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1277,10 +1374,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8870317142224371480, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3606970762103652289, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005381558}
+    - targetCorrespondingSourceObject: {fileID: 8841039395789881501, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 685156513}
   m_SourcePrefab: {fileID: 100100000, guid: 62de648ccc949714e961552f9bc0e059, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

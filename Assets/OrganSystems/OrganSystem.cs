@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Organs;
+using Player;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Utilities;
 
 namespace OrganSystems
@@ -11,7 +11,7 @@ namespace OrganSystems
         [CanBeNull]
         public Organ organ;
         
-        public void OnInteract(InputAction.CallbackContext context)
+        public void Interact(GameObject interactionOrigin)
         {
             throw new System.NotImplementedException();
         }
