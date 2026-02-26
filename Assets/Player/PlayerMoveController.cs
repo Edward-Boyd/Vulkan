@@ -24,7 +24,6 @@ namespace Player
             {
                 case true:
                     _moveDirection = _moveInput.x * orientation.right + _moveInput.y * orientation.forward;
-                    _moveDirection = new Vector3(_moveInput.x, 0, _moveInput.y) ;
                     break;
                 case false:
                     _moveDirection.y += gravity * Time.deltaTime;
