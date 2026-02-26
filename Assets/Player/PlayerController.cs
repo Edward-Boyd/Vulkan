@@ -15,34 +15,37 @@ namespace Player
         
 
         private Vector2 _moveInput;
-        private Vector3 _velocity;
+        private Vector3 _moveDirection;
         
 
         private void Update()
         {
-            if (!controller.isGrounded)
+            switch (controller.isGrounded)
             {
-                _velocity.y += gravity * Time.deltaTime;
-                controller.Move(_velocity * Time.deltaTime);
-                return;
+                case true:
+                    _moveDirection = _moveInput.x * orientation.right + _moveInput.y * orientation.forward;
+                    break;
+                case false:
+                    _moveDirection.y += gravity * Time.deltaTime;
+                    break;
             }
+            
+            Debug.Log(_moveDirection);
 
-            var move = _moveInput.x * orientation.right + _moveInput.y * orientation.forward;
-
-            controller.Move(move * (speed * Time.deltaTime));
+            controller.Move(_moveDirection * (speed * Time.deltaTime));
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
             _moveInput = context.ReadValue<Vector2>();
 
-            _velocity.x += _moveInput.x;
-            _velocity.z += _moveInput.y;
+            /*_velocity.x = _moveInput.x;
+            _velocity.z = _moveInput.y;*/
         }
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //_velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 }
