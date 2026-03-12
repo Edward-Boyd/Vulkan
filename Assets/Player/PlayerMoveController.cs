@@ -1,4 +1,4 @@
-using System;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +7,7 @@ namespace Player
     public class PlayerMoveController : MonoBehaviour
     {
         public CharacterController controller;
-        public Transform orientation;
+        public CinemachineCamera cameraPosition;
         
         [SerializeField] private float speed = 5f;
         [SerializeField] private float jumpHeight = 2f;
@@ -17,19 +17,25 @@ namespace Player
         private Vector2 _moveInput;
         private Vector3 _moveDirection;
         
+        //TODO move
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         private void Update()
         {
             switch (controller.isGrounded)
             {
                 case true:
-                    _moveDirection = _moveInput.x * orientation.right + _moveInput.y * orientation.forward;
+                    _moveDirection = _moveInput.x * cameraPosition.transform.right + _moveInput.y * cameraPosition.transform.forward;
                     break;
                 case false:
                     _moveDirection.y += gravity * Time.deltaTime;
                     break;
             }
-
+            
             controller.Move(_moveDirection * (speed * Time.deltaTime));
         }
 
