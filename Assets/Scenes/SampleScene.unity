@@ -857,6 +857,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 738b50b3-df59-4dc3-99c8-0db7f8d733bd
     m_ActionName: 'PlayerControls/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971411307}
+        m_TargetAssemblyTypeName: Player.PlayerWeaponController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6cdd016f-1de2-49dc-8372-34a2d2badbb3
+    m_ActionName: 'PlayerControls/PrimaryFire[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 971411307}
+        m_TargetAssemblyTypeName: Player.PlayerWeaponController, Assembly-CSharp
+        m_MethodName: OnReload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ceb367b0-e892-4456-80f3-8b9a25729979
+    m_ActionName: 'PlayerControls/Reload[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControls
@@ -906,6 +938,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInteractController
   interactionDistance: 10
   playerCamera: {fileID: 492683097}
+--- !u!4 &971411306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4467766549449033382, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
+  m_PrefabInstance: {fileID: 1138728900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &971411307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971411295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ff678a52f9482f9b1c8e95dfd65126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerWeaponController
+  Weapon: {fileID: 1032755703}
+--- !u!1 &1032755702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032755704}
+  - component: {fileID: 1032755703}
+  m_Layer: 0
+  m_Name: TestWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1032755703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032755702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c081788a090646408683c3fec1bd190c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.Pistol.Pistol
+  playerCamera: {fileID: 492683097}
+  damage: 5
+  clipSize: 6
+  maxAmmo: 1000
+  projectiles: 1
+  spread: 0
+  effectiveWeaponRange: 1000
+--- !u!4 &1032755704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032755702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 971411306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1138728900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -989,7 +1090,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7136990755829009548, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4467766549449033382, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1032755704}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       insertIndex: -1
@@ -1006,6 +1110,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 971411299}
+    - targetCorrespondingSourceObject: {fileID: 7508560154921356978, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971411307}
   m_SourcePrefab: {fileID: 100100000, guid: 1b1c87d4a86094749a3c3e817df5b68b, type: 3}
 --- !u!4 &1138728901 stripped
 Transform:
@@ -1402,6 +1509,45 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1775752491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7667662588556714347, guid: 7805c816e5be3904a8e459ddbdc77e3c, type: 3}
+  m_PrefabInstance: {fileID: 6933936760373368500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1775752494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775752491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026ef276505a46e2b1b145fde1218e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.Tinhead.Scripts.TinHeadHealthController
+  health: 10
+--- !u!65 &1775752495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775752491}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3411472, y: 2.6498792, z: 1.1108801}
+  m_Center: {x: -0.024325967, y: 1.2766448, z: 0.33202183}
 --- !u!1001 &6402585332964929576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1592,7 +1738,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7667662588556714347, guid: 7805c816e5be3904a8e459ddbdc77e3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1775752494}
+    - targetCorrespondingSourceObject: {fileID: 7667662588556714347, guid: 7805c816e5be3904a8e459ddbdc77e3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1775752495}
   m_SourcePrefab: {fileID: 100100000, guid: 7805c816e5be3904a8e459ddbdc77e3c, type: 3}
 --- !u!1 &8176947719130137162 stripped
 GameObject:

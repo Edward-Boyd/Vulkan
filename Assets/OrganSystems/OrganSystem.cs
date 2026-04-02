@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using Organs;
-using Player;
+using Unity.Serialization;
 using UnityEngine;
 using Utilities;
 
@@ -8,12 +8,17 @@ namespace OrganSystems
 {
     public class OrganSystem : MonoBehaviour, IInteractable
     {
-        [CanBeNull]
+        [CanBeNull][DontSerialize]
         public Organ organ;
+
+        [SerializeField]
+        private GameObject organInstance;
         
         public void Interact(GameObject interactionOrigin)
         {
-            throw new System.NotImplementedException();
+            if (organ != null) return;
+
+            Instantiate(organInstance, transform.position, transform.rotation);
         }
     }
 }
